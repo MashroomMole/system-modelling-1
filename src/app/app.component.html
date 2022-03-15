@@ -1,0 +1,44 @@
+<div style="display: flex; ">
+  <button mat-button (click)="start()">Start</button>
+  <button mat-button style="margin-left: 620px;" (click)="testRand()">Test distribution</button>
+</div>
+
+<div style = "display: grid; grid-template-columns: 1fr 1fr;">
+  <div class="flex">
+    <div class="flex-item">
+      <div style="display: block; width: 500px;">
+      <canvas baseChart width="100" height="100"
+                  [data]="lineChartDataSet"
+                  [options] = "chartOptions"
+                  [type]="lineChartType"
+                  [labels]="lineChartDataSet.labels"
+                  ></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid;">
+    <div class="flex">
+      <div class="flex-item">
+        <div style="display: block; width: 500px;">
+        <canvas baseChart width="100" height="100"
+                    [data]="lineChartData"
+                    [options] = "chartOptions"
+                    [type]="lineChartType"
+                    [labels]="lineChartData.labels"
+                    ></canvas>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+
+<div style="margin-top: 50px;">
+  <p style="color: rgb(0, 0, 0, 0.7);">Server idle time: {{serverFreeTime}} ms</p>
+  <p style="color: rgb(0, 0, 0, 0.7);">Server usage ratio: {{serverUsageRatio}} %</p>
+</div>
+
+
+
+
+  
